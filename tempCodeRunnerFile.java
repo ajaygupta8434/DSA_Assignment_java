@@ -1,1 +1,3 @@
- System.out.println(arr[i]);
+if (count > 1) {
+                System.out.println(arr[i] + " repeated " + count + " times");
+            }
