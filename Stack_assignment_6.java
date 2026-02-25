@@ -41,28 +41,22 @@ public class Stack_assignment_6 {
 
     // Infix to Postfix
     static String infixToPostfix(String exp) {
-
         String result = "";
         top = -1; // reset stack
-
         for (int i = 0; i < exp.length(); i++) {
             char ch = exp.charAt(i);
-
             if (isOperand(ch)) {
                 result += ch;
             }
-
             else if (ch == '(') {
                 push(ch);
             }
-
             else if (ch == ')') {
                 while (!isEmpty() && peek() != '(') {
                     result += pop();
                 }
                 pop(); // remove '('
             }
-
             else { // operator
                 while (!isEmpty() && precedence(ch) <= precedence(peek())) {
 
