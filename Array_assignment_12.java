@@ -1,6 +1,5 @@
 public class Array_assignment_12 {
-   public Array_assignment_12() {
-   }
+ 
 
    public static void main(String[] var0) {
       int[] var1 = new int[]{3, 4, 7, 2, -3};
