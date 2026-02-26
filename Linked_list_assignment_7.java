@@ -1,44 +1,67 @@
 public class Linked_list_assignment_7 {
-
-    static class Node {
+     Node head;
+      class Node{
         int data;
         Node next;
-        Node(int d) { data = d; }
-    }
-
-    static Node add(Node l1, Node l2) {
-        Node dummy = new Node(0);
-        Node current = dummy;
-        int carry = 0;
-
-        while (l1 != null || l2 != null || carry != 0) {
-            int sum = carry;
-
-            if (l1 != null) { sum += l1.data; l1 = l1.next; }
-            if (l2 != null) { sum += l2.data; l2 = l2.next; }
-
-            carry = sum / 10;
-            current.next = new Node(sum % 10);
-            current = current.next;
-        }
-        return dummy.next;
-    }
-
-    static void print(Node head) {
-        while (head != null) {
-            System.out.print(head.data + " ");
-            head = head.next;
+        Node(int data){
+            this.data=data;
+            this.next=null;
         }
     }
+     public void add(int data){
+        Node newNode=new Node(data);
+        if(head==null){
+            head=newNode;
+        }else{
+            Node temp=head;
+            while(temp.next!=null){
+                temp=temp.next;
+            }
+            temp.next=newNode;
+        }
+    }
+     public void removeNthFromEnd(int n){
+        Node dummy=new Node(0);
+        dummy.next=head;
+        Node first=dummy;
+        Node second=dummy;
 
+        for(int i=0;i<=n;i++){
+            first=first.next;
+        }
+
+        while(first!=null){
+            first=first.next;
+            second=second.next;
+        }
+
+        second.next=second.next.next;
+        head=dummy.next; // Update head in case the first node was removed
+     }
+      public void display(){
+        Node temp=head;
+        while(temp!=null){
+            System.out.print(temp.data+" ");
+            temp=temp.next;
+        }
+    }
+
+    
+
+ 
     public static void main(String[] args) {
-        Node l1 = new Node(2);
-        l1.next = new Node(4);
+        Linked_list_assignment_7 list=new Linked_list_assignment_7 ();
+        list.add(1);
+        list.add(2);
+        list.add(3);
+        list.add(4);
+        list.add(5);
 
-        Node l2 = new Node(5);
-        l2.next = new Node(6);
+        int n=2; // Remove the 2nd node from the end
+        list.removeNthFromEnd(n);
 
-        Node result = add(l1, l2);
-        print(result);
-    }
+        System.out.println("Linked List after removing " + n + "th node from the end:");
+        list.display();
+    }   
+    
 }
