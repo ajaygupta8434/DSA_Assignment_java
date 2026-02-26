@@ -1,9 +1,15 @@
 Assignment DSA (submit before 28.02.2026)
+
 •	Array and Array operations 
+
 •	Stack and Its Operations
+
 •	Queue and Its Operations
+
 •	Linked List and Its Operations
+
 •	Linear Search Algorithm
+
 •	Binary Search Algorithm
 
 Array and Array operations related Assignment:
@@ -76,4 +82,5 @@ Binary Search Related Assignment:
 3.	Count Occurrences: Using the first and last occurrence indices to determine the total count of a specific element.
 4.	Finding Floor and Ceiling: Locating the largest element less than or equal to a target (floor) and the smallest element greater than or equal to a target (ceiling) in a sorted array.
 5.	Square Root of a Number: Calculating the integer square root of a number efficiently by searching for the value x where x*x <= number and (x+1)*(x+1) > number.
+
 
